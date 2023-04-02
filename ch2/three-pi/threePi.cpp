@@ -14,7 +14,6 @@ double square(Complex a, Complex b, Complex c) {
 int main(int argc, char const *argv[]) {
   Complex x0 = 1., x1 = exp(Complex(0., 2. * M_PI / 3.));
   double s = square(x0, x1, conj(x1));
-  std::cout << s << std::endl;
   unsigned int nsides = 3;
 
   double splus;
@@ -27,7 +26,7 @@ int main(int argc, char const *argv[]) {
     x1 = nextX, nsides *= 2;
   }
 
-  std::cout << "pi: " << s << std::endl;
+  std::cout << std::setprecision(16) << "pi: " << s << std::endl;
 
   return 0;
 }

@@ -26,7 +26,7 @@ complex foot(complex a, complex b, complex c) {
 /// @brief calculate the first point be rotated by +755 degree about the second
 /// point.
 complex trans(complex c, complex o) {
-  complex r = exp(complex(0, 35. / 180. * M_PI));
+  complex r = exp(complex(0., 35. / 180. * M_PI));
   complex oc = c - o;
   return oc * r + o;
 }
