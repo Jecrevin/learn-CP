@@ -7,8 +7,8 @@ typedef std::complex<double> complex;
 
 /// @brief the square of triangle ABC.
 double square(complex a, complex b, complex c) {
-  double h = (conj(b - a) * (c - a)).imag() / abs(b - a) / abs(c - a);
-  return h * abs(b - a);
+  complex ac = c - a, ab = b - a;
+  return std::abs((ab * std::conj(ac)).imag()) / 2;
 }
 
 // ===== exercise 4 in chapter 2 =====
@@ -17,7 +17,7 @@ double square(complex a, complex b, complex c) {
 /// of segment AC to point B
 complex foot(complex a, complex b, complex c) {
   complex ac = c - a, ab = b - a;
-  double foo = (ac * conj(ab)).real() / abs(ac);
+  double foo = (ac * std::conj(ab)).real() / abs(ac);
   return foo * ac / abs(ac) + a;
 }
 
