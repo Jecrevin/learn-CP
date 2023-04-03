@@ -1,10 +1,17 @@
+#include <complex>
 #include <iostream>
-#include <limits>
+#include <sstream>
+
+typedef std::complex<double> Complex;
 
 int main(int argc, char const *argv[]) {
-  std::cout << "float's machine precision: "
-            << std::numeric_limits<float>::min() << std::endl;
-  std::cout << "double's machine precision: "
-            << std::numeric_limits<double>::min() << std::endl;
+  std::istringstream stream(argv[1]);
+  Complex a;
+  if (!(stream >> a)) {
+    std::cerr << "Failed\n";
+    return -1;
+  }
+  std::cout << a << std::endl;
+
   return 0;
 }
